@@ -13,18 +13,18 @@ import {
   languages, 
   projects, 
   additionalInfo 
-} from './data/mock';
+} from './mock';
 
 // Import components
-import Header from './components/Header';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Education from './components/Education';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from './Header';
+import Hero from './Hero';
+import About from './About';
+import Skills from './Skills';
+import Experience from './Experience';
+import Education from './Education';
+import Projects from './Projects';
+import Contact from './Contact';
+import Footer from './Footer';
 
 const Home = () => {
   return (
