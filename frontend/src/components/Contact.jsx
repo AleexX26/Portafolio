@@ -158,5 +158,3 @@ const Contact = ({ personalInfo }) => {
 };
 
 export default Contact;
-
-export default Contact;
