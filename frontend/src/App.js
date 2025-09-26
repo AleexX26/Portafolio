@@ -1,38 +1,56 @@
-import { useEffect } from "react";
+import React from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import { BrowserRouter } from "react-router-dom";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
+// Import mock data
+import { 
+  personalInfo, 
+  skills, 
+  experience, 
+  education, 
+  courses, 
+  languages, 
+  projects, 
+  additionalInfo 
+} from './data/mock';
+
+// Import components
+import Header from './components/Header';
+import Hero from './components/Hero';
+import Skills from './components/Skills';
 
 const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
-  useEffect(() => {
-    helloWorldApi();
-  }, []);
-
   return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
+    <div className="min-h-screen">
+      <Header personalInfo={personalInfo} />
+      <Hero personalInfo={personalInfo} />
+      <Skills skills={skills} />
+      
+      {/* Placeholder sections for development */}
+      <div id="about" className="py-20 bg-slate-50 text-center">
+        <h2 className="text-3xl font-bold text-slate-800 mb-4">About Section</h2>
+        <p className="text-slate-600">Coming soon - Detailed about section</p>
+      </div>
+      
+      <div id="experience" className="py-20 bg-white text-center">
+        <h2 className="text-3xl font-bold text-slate-800 mb-4">Experience Section</h2>
+        <p className="text-slate-600">Coming soon - Professional experience timeline</p>
+      </div>
+      
+      <div id="education" className="py-20 bg-slate-50 text-center">
+        <h2 className="text-3xl font-bold text-slate-800 mb-4">Education Section</h2>
+        <p className="text-slate-600">Coming soon - Educational background</p>
+      </div>
+      
+      <div id="projects" className="py-20 bg-white text-center">
+        <h2 className="text-3xl font-bold text-slate-800 mb-4">Projects Section</h2>
+        <p className="text-slate-600">Coming soon - Portfolio projects showcase</p>
+      </div>
+      
+      <div id="contact" className="py-20 bg-slate-50 text-center">
+        <h2 className="text-3xl font-bold text-slate-800 mb-4">Contact Section</h2>
+        <p className="text-slate-600">Coming soon - Contact form and information</p>
+      </div>
     </div>
   );
 };
@@ -41,11 +59,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
-        </Routes>
+        <Home />
       </BrowserRouter>
     </div>
   );
