@@ -286,37 +286,7 @@ const Contact = ({ personalInfo }) => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <Card className="shadow-xl border-0 bg-gradient-to-r from-blue-600 to-slate-600 text-white">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold mb-4">
-                ¿Listo para colaborar?
-              </h3>
-              <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Si tienes un proyecto interesante, una oportunidad de prácticas, o simplemente quieres conectar, 
-                no dudes en contactarme. Estoy siempre abierto a nuevos desafíos y colaboraciones.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button 
-                  onClick={() => window.open(`mailto:${personalInfo.email}`, '_blank')}
-                  className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-3 text-lg font-medium"
-                >
-                  <Mail className="w-5 h-5 mr-2" />
-                  Enviar Email
-                </Button>
-                <Button 
-                  variant="outline"
-                  onClick={() => window.open(personalInfo.linkedin, '_blank')}
-                  className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg font-medium"
-                >
-                  <Linkedin className="w-5 h-5 mr-2" />
-                  Conectar en LinkedIn
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+
       </div>
     </section>
   );
