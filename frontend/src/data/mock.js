@@ -3,10 +3,10 @@ export const personalInfo = {
   name: "Alejandro Sobrino Murillo",
   role: "Developer",
   location: "Leganés, Madrid",
-  email: "alejandro.sobrino@example.com",
-  phone: "+34 600 000 000",
+  email: "alsomu26@gmail.com",
+  phone: "676641686",
   linkedin: "https://linkedin.com/in/alejandro-sobrino-murillo",
-  bio: "Passionate developer with strong analytical skills and a dedication to continuous learning. Known for perseverance, excellent teamwork abilities, and the capacity to perform effectively under pressure. Committed to leveraging technology to solve complex problems and drive innovation."
+  bio: "Joven desarrollador con formación en desarrollo de aplicaciones y experiencia en proyectos de investigación y prácticas profesionales. Destaca por su capacidad de análisis, toma de decisiones bajo presión, atención al detalle, trabajo en equipo y pasión por la tecnología."
 };
 
 export const skills = {
@@ -25,12 +25,12 @@ export const skills = {
     { name: "H2", level: 70, icon: "HardDrive" }
   ],
   soft: [
-    { name: "Time Management", icon: "Clock" },
-    { name: "Teamwork", icon: "Users" },
-    { name: "Problem Solving", icon: "Lightbulb" },
-    { name: "Decision Making", icon: "Target" },
-    { name: "Analytical Thinking", icon: "BarChart3" },
-    { name: "Communication", icon: "MessageSquare" }
+    { name: "Trabajo en equipo", icon: "Users" },
+    { name: "Gestión de tiempo", icon: "Clock" },
+    { name: "Capacidad de análisis", icon: "BarChart3" },
+    { name: "Toma de decisiones bajo presión", icon: "Target" },
+    { name: "Trato con clientes", icon: "MessageSquare" },
+    { name: "Atención al detalle", icon: "Eye" }
   ]
 };
 
@@ -38,57 +38,57 @@ export const experience = [
   {
     id: 1,
     company: "MELIT Technologies",
-    position: "Development Intern",
-    duration: "3 months",
-    type: "DAM Internship",
+    position: "Prácticas de Grado Superior (DAM)",
+    duration: "3 meses",
+    type: "Prácticas",
     location: "Madrid",
-    description: "Gained hands-on experience in multiplatform application development, working with modern development frameworks and contributing to real-world projects.",
+    description: "Experiencia práctica en desarrollo de aplicaciones multiplataforma, trabajando con frameworks modernos y contribuyendo a proyectos reales.",
     achievements: [
-      "Collaborated on multiplatform application development projects",
-      "Learned industry best practices and development workflows",
-      "Contributed to team deliverables and project milestones"
+      "Colaboré en proyectos de desarrollo de aplicaciones multiplataforma",
+      "Aprendí mejores prácticas de la industria y flujos de trabajo",
+      "Contribuí a entregables del equipo y milestones del proyecto"
     ]
   },
   {
     id: 2,
     company: "Universidad Politécnica de Madrid",
-    position: "Research Team Member",
-    duration: "3 months",
-    type: "Research",
+    position: "Grupo de investigación GEOQUIBIDY",
+    duration: "3 meses",
+    type: "Investigación",
     location: "Madrid",
-    description: "Participated in the GEOQUIBIDY research team, contributing to innovative projects and gaining valuable research experience.",
+    description: "Participación en el equipo de investigación GEOQUIBIDY, contribuyendo a proyectos innovadores y ganando experiencia valiosa en investigación.",
     achievements: [
-      "Participated in cutting-edge research initiatives",
-      "Collaborated with academic professionals",
-      "Developed analytical and research methodologies"
+      "Participé en iniciativas de investigación de vanguardia",
+      "Colaboré con profesionales académicos",
+      "Desarrollé metodologías analíticas y de investigación"
     ]
   },
   {
     id: 3,
-    company: "Event Services",
-    position: "Event Host (Azafato de Eventos)",
-    duration: "2023 – Present",
-    type: "Part-time",
+    company: "Servicios de Eventos",
+    position: "Azafato de Eventos",
+    duration: "2023 – Actualidad",
+    type: "Tiempo parcial",
     location: "Madrid",
-    description: "Providing professional event hosting services, demonstrating excellent communication skills and adaptability in dynamic environments.",
+    description: "Prestación de servicios profesionales de azafato en eventos, demostrando excelentes habilidades de comunicación y adaptabilidad en entornos dinámicos.",
     achievements: [
-      "Enhanced communication and interpersonal skills",
-      "Managed multiple events simultaneously",
-      "Maintained professionalism in high-pressure situations"
+      "Mejoré habilidades de comunicación e interpersonales",
+      "Gestión de múltiples eventos simultáneamente",
+      "Mantuve profesionalismo en situaciones de alta presión"
     ]
   },
   {
     id: 4,
     company: "Federación Madrileña de Natación",
-    position: "Swimming Referee",
-    duration: "2022 – Present",
-    type: "Part-time",
+    position: "Árbitro de Natación",
+    duration: "2022 – Actualidad",
+    type: "Tiempo parcial",
     location: "Madrid",
-    description: "Certified swimming referee overseeing competitive events, ensuring fair play and maintaining high standards of competition.",
+    description: "Árbitro certificado de natación supervisando eventos competitivos, asegurando el juego limpio y manteniendo altos estándares de competición.",
     achievements: [
-      "Certified as an official swimming referee",
-      "Oversee regional swimming competitions",
-      "Demonstrate attention to detail and quick decision-making"
+      "Certificado como árbitro oficial de natación",
+      "Supervisó competiciones regionales de natación",
+      "Demostré atención al detalle y toma de decisiones rápida"
     ]
   }
 ];
@@ -96,67 +96,68 @@ export const experience = [
 export const education = [
   {
     id: 1,
-    institution: "Higher Education Institution",
-    degree: "Double Degree: Multiplatform Application Development & Web Application Development",
-    duration: "2023 – 2025 (Current)",
-    type: "Higher Degree",
-    status: "In Progress",
-    description: "Comprehensive program covering both multiplatform and web application development technologies and methodologies."
+    institution: "Centro de Educación Superior",
+    degree: "Doble Grado: Desarrollo de Aplicaciones Multiplataforma & Desarrollo de Aplicaciones Web",
+    duration: "2023 – 2025 (Actualidad)",
+    type: "Grado Superior",
+    status: "En curso",
+    description: "Programa integral que cubre tecnologías y metodologías tanto de desarrollo de aplicaciones multiplataforma como de desarrollo web."
   },
   {
     id: 2,
-    institution: "Technical College",
-    degree: "Systems Microinformatics",
+    institution: "Instituto Técnico",
+    degree: "Sistemas Microinformáticos",
     duration: "2021 – 2023",
-    type: "Technical Degree",
-    status: "Completed",
-    description: "Foundational program in computer systems and microinformatics, providing essential technical knowledge."
+    type: "Grado Medio",
+    status: "Completado",
+    description: "Programa fundamental en sistemas informáticos y microinformática, proporcionando conocimientos técnicos esenciales."
   }
 ];
 
 export const courses = [
-  "Artificial Intelligence Fundamentals",
-  "Virtual Assistants Development",
-  "Process Automation",
-  "Database Design and Management",
-  "Web Development Best Practices",
-  "Software Engineering Principles"
+  "IA: Asistentes Virtuales, Automatizaciones y Soluciones Inteligentes para el Transporte",
+  "Fundamentos de Inteligencia Artificial",
+  "Desarrollo de Asistentes Virtuales",
+  "Automatización de Procesos",
+  "Diseño y Gestión de Bases de Datos",
+  "Mejores Prácticas de Desarrollo Web",
+  "Principios de Ingeniería de Software"
 ];
 
 export const languages = [
-  { name: "Spanish", level: "Native", proficiency: 100 },
-  { name: "English", level: "Intermediate", proficiency: 70 }
+  { name: "Español", level: "Nativo", proficiency: 100 },
+  { name: "Inglés", level: "Medio", proficiency: 70 }
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Web Application",
-    description: "Full-stack web application with Angular frontend and Spring Boot backend, featuring user authentication and payment integration.",
+    title: "Aplicación Web E-Commerce",
+    description: "Aplicación web full-stack con frontend Angular y backend Spring Boot, con autenticación de usuarios e integración de pagos.",
     technologies: ["Angular", "Spring Boot", "MySQL", "TypeScript"],
-    status: "In Development",
-    category: "Web Development"
+    status: "En desarrollo",
+    category: "Desarrollo Web"
   },
   {
     id: 2,
-    title: "Database Management System",
-    description: "Comprehensive database solution for small businesses with automated reporting and data analytics capabilities.",
+    title: "Sistema de Gestión de Base de Datos",
+    description: "Solución integral de base de datos para pequeñas empresas con reportes automatizados y capacidades de análisis de datos.",
     technologies: ["Java", "MySQL", "H2", "Spring Boot"],
-    status: "Planned",
-    category: "Database Systems"
+    status: "Planificado",
+    category: "Sistemas de Bases de Datos"
   },
   {
     id: 3,
-    title: "Process Automation Tool",
-    description: "Python-based automation tool for streamlining repetitive tasks and improving workflow efficiency.",
+    title: "Herramienta de Automatización de Procesos",
+    description: "Herramienta basada en Python para automatizar tareas repetitivas y mejorar la eficiencia del flujo de trabajo.",
     technologies: ["Python", "JavaScript", "MongoDB"],
-    status: "Concept",
-    category: "Automation"
+    status: "Concepto",
+    category: "Automatización"
   }
 ];
 
 export const additionalInfo = {
-  drivingLicense: "Class B",
-  availability: "Available for internships and entry-level positions",
-  relocate: "Open to relocation within Spain and Europe"
+  drivingLicense: "Carnet B",
+  availability: "Disponible para prácticas y puestos de nivel inicial",
+  relocate: "Abierto a reubicación dentro de España y Europa"
 };
