@@ -5,7 +5,7 @@ export const personalInfo = {
   location: "Leganés, Madrid",
   email: "alsomu26@gmail.com",
   phone: "676641686",
-  linkedin: "https://linkedin.com/in/alejandro-sobrino-murillo",
+  linkedin: "https://www.linkedin.com/in/asobrinomurillo",
   bio: "Joven desarrollador con formación en desarrollo de aplicaciones y experiencia en proyectos de investigación y prácticas profesionales. Destaca por su capacidad de análisis, toma de decisiones bajo presión, atención al detalle, trabajo en equipo y pasión por la tecnología."
 };
 
