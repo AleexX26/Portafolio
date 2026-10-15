@@ -1,0 +1,10 @@
+// Configuración de Cloudflare Workers: web estática, sin código de servidor.
+// Cloudflare la despliega sola en cada push a main (Workers Builds conectado al repo).
+{
+  "name": "portafolio",
+  "compatibility_date": "2026-10-14",
+  "workers_dev": true,
+  "assets": {
+    "directory": "."
+  }
+}
