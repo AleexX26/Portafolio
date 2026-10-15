@@ -7,7 +7,7 @@ Web de portafolio de una sola página para enseñar mis webs a clientes potencia
 - Un único `index.html`: HTML + CSS + JS sin frameworks ni build
 - Tipografía Inter Tight variable (Google Fonts, `wght@100..900`), única familia
 - Capturas de los proyectos en `img/*.webp` (1200×900)
-- Hosting estático: Netlify, Vercel o GitHub Pages (subir la carpeta tal cual, con `img/`)
+- Hosting: Cloudflare Workers (solo archivos estáticos), desplegado desde GitHub
 
 ## Arquitectura
 
@@ -38,10 +38,8 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 - Ver en local: doble clic en `index.html` (funciona desde el disco).
 - Repo: https://github.com/AleexX26/Portafolio (público, rama `main`).
-- Publicar: `git push` a `main` despliega en dos sitios a la vez (≈1 min):
-  - Cloudflare Workers (Workers Builds conectado al repo, `wrangler.jsonc` solo con assets):
-    https://portafolio.e275.workers.dev. `.assetsignore` deja fuera CLAUDE.md, wrangler.jsonc y .github.
-  - GitHub Pages (`.github/workflows/pages.yml` copia `index.html` + `img/`): https://aleexx26.github.io/Portafolio/
+- Publicar: `git push` a `main` → Cloudflare Workers Builds (conectado al repo, `wrangler.jsonc` solo con
+  assets) despliega en https://portafolio.e275.workers.dev (≈1 min). `.assetsignore` deja fuera CLAUDE.md y wrangler.jsonc.
 - Rehacer una captura (Edge sin ventana; el comando no termina solo, por eso el `timeout`):
   `timeout 45 "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --hide-scrollbars --user-data-dir="C:/Users/minis/AppData/Local/Temp/edge-shot" --window-size=1440,1080 --virtual-time-budget=30000 --run-all-compositor-stages-before-draw --screenshot="C:/…/img/x.png" URL`
   y pasarla a WebP 1200×900 con `sharp` (está instalado en `Crear_pagina2/node_modules`).
@@ -57,9 +55,11 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 ## Decisiones
 
+- 2026-10-15: solo Cloudflare (decisión del usuario): se borra `.github/workflows/pages.yml`. GitHub Pages hay que desactivarlo a mano en Settings > Pages del repo.
+
 - 2026-10-15: despliegue también en Cloudflare Workers (cuenta minisobri26, worker `portafolio`), como Estanco 275: `wrangler.jsonc` sin `main` (solo archivos estáticos) y `workers_dev: true` para activar la URL .workers.dev al desplegar.
 
-- 2026-10-15: sube al repo existente `AleexX26/Portafolio` sustituyendo el portafolio antiguo (React + Python de Emergent) con un commit encima de su historial, sin forzar: lo antiguo sigue en `95786a0`. Pages se publica con Actions porque el repo ya tenía ese origen configurado.
+- 2026-10-15: sube al repo existente `AleexX26/Portafolio` sustituyendo el portafolio antiguo (React + Python de Emergent) con un commit encima de su historial, sin forzar: lo antiguo sigue en `95786a0`.
 
 - 2026-10-15: proyectos de ejemplo sustituidos por los 4 reales. Mis Finanzas va sin captura porque sin sesión solo enseña "Entrar con Google".
 - 2026-10-15: rediseño más llamativo a petición del usuario: deja el rojo y pasa a negro + blanco roto + lima eléctrico (#D4FF3A) por bloques. Añade el titular con grosor que sigue al ratón (más una ola al cargar), la cinta, la fila que se llena de lima al pasar el ratón, el sello "Ver web", los botones imán y el pie letra a letra.
