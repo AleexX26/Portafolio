@@ -261,6 +261,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .lista:hover .proyecto:not(:hover) { opacity: .35; }
 }
 .proyecto__previa { display: none; }   /* vista previa dentro de la lista: solo en móvil */
+/* Enlace al código (solo si el proyecto tiene "repo"): va fuera de la fila porque un enlace no puede ir dentro de otro */
+li:has(> .proyecto__repo) { position: relative; }
+.proyecto__repo { position: absolute; right: var(--margen); bottom: clamp(4px, .7vw, 10px); font-size: .875rem; font-weight: 600; text-underline-offset: .2em; }
+li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
+.lista:hover li:has(> .proyecto__repo:hover) .proyecto { opacity: 1; }
 
 /* Lámina de color: se usa cuando un proyecto no tiene captura */
 .lamina {
@@ -314,6 +319,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .proyecto:hover .proyecto__nombre { transform: none; font-weight: 600; }
   .proyecto__previa { display: block; aspect-ratio: 16 / 11; overflow: hidden; margin-bottom: 6px; }
   .proyecto__ir { margin-top: 4px; justify-self: start; background: var(--acento); color: var(--negro); padding: .75em 1.1em; }
+  .proyecto__repo { position: static; display: inline-block; margin-top: 14px; font-size: 1rem; }
+  li:has(> .proyecto:hover) .proyecto__repo { color: inherit; }
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   .proyecto { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); row-gap: 12px; }
@@ -631,6 +638,7 @@ const DATOS = {
              (formato 4:3, por ejemplo 1200×900; se ve la parte de arriba).
              Déjala vacía "" y se mostrará una lámina con el color y el nombre.
    - color:  color de la lámina (y de fondo mientras carga la captura).
+   - repo:   (opcional) enlace al código en GitHub; si está, sale "Ver código".
    El orden de esta lista es el orden en la página.
    ===================================================================== */
 const PROYECTOS = [
@@ -683,6 +691,17 @@ const PROYECTOS = [
     url: "https://demo-tatuaje-3.e275.workers.dev",
     imagen: "img/calco-3.webp",
     color: "#D6261E",
+  },
+  {
+    nombre: "Magnesio",
+    sector: "Gimnasios",
+    tipo: "Landing",
+    anio: 2026,
+    descripcion: "Web para gimnasios y boxes: horario filtrable por disciplina, entrenadores, tarifas como tarjetas de socio y clase de prueba por WhatsApp o email. Negocio de demostración.",
+    url: "https://demo-gym-a1v.pages.dev",
+    repo: "https://github.com/AleexX26/demo-gym",
+    imagen: "img/magnesio-gym.webp",
+    color: "#FFC400",
   },
   {
     nombre: "Mis Finanzas",
@@ -813,7 +832,8 @@ const PROYECTOS = [
           <p class="proyecto__desc">${escapar(p.descripcion)}</p>
         </div>
         <span class="proyecto__ir">Visitar web ${FLECHA}<span class="solo-lectores">(se abre en una pestaña nueva)</span></span>
-      </a>
+      </a>${p.repo ? `
+      <a class="proyecto__repo" href="${escapar(p.repo)}" target="_blank" rel="noopener">Ver código<span class="solo-lectores"> de ${escapar(p.nombre)} (se abre en una pestaña nueva)</span></a>` : ""}
     </li>`).join("")).join("");
 
   /* ---------- Filtros por sector con su número ---------- */

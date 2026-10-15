@@ -13,7 +13,7 @@ Web de portafolio de una sola página para enseñar mis webs a clientes potencia
 
 ```
 index.html   Todo: <style> (tokens en :root), secciones, <script> con DATOS y PROYECTOS arriba
-img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, tinta-negra, calco-3, estanco-demo)
+img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, tinta-negra, calco-3, estanco-demo, magnesio-gym)
 ```
 
 Bloques de color por sección: portada negra (titular de grosor variable) → cinta lima inclinada en
@@ -34,6 +34,7 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 | Estancos | Demo Estanco | Web de negocio | https://demo-estanco-2.e275.workers.dev | `Estanco-demo/` |
 | Tatuajes | Tinta Negra | Landing | https://demo-tatuajes.e275.workers.dev | `Tatuajes/` |
 | Tatuajes | Calco | Landing | https://demo-tatuaje-3.e275.workers.dev | `Tatuajes-3/` |
+| Gimnasios | Magnesio | Landing | https://demo-gym-a1v.pages.dev (repo: https://github.com/AleexX26/demo-gym) | `GYM/` |
 | Apps | Mis Finanzas | Aplicación web | https://finanzas-23de8.web.app/ | `Economia/` (sin captura: lámina rosa) |
 
 ## Comandos
@@ -49,6 +50,7 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 ## Cómo editar
 
 - Proyecto nuevo: copiar un bloque `{ nombre, sector, tipo, anio, descripcion, url, imagen, color }` en `PROYECTOS`.
+  `repo` (opcional): enlace al código; añade "Ver código" fuera de la fila (un enlace no puede ir dentro de otro).
   `imagen: ""` muestra una lámina con el color y el nombre (el texto se pone blanco o negro solo).
   `sector` crea la sección y su filtro (escrito igual en todos); una sección nueva, p. ej. "Restaurantes", aparece sola al usarla. `tipo` sale junto al año y en los botones de contacto.
 - Datos de contacto: objeto `DATOS`. Para SEO, cambiar también `<title>` y metas del `<head>`.
@@ -56,6 +58,8 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 - Palabras de la cinta: en el HTML, dos copias idénticas dentro de `.cinta__pista`.
 
 ## Decisiones
+
+- 2026-10-15: nueva sección Gimnasios con Magnesio (demo-gym en Cloudflare Pages). Primer proyecto con campo `repo`; las demás entradas no lo tienen y se ven igual. Captura hecha con Edge `--force-prefers-reduced-motion --blink-settings=preferredColorScheme=1` para que salga en claro y sin animaciones a medias.
 
 - 2026-10-15: proyectos agrupados por sector (Barberías, Estancos, Tatuajes, Apps) con un título en etiqueta lima por sección, y filtros por sector en vez de por tipo. Restaurantes se añadirá cuando haya proyecto (no se muestran secciones vacías).
 
