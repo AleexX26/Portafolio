@@ -18,12 +18,14 @@ img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, tinta-ne
 
 Bloques de color por sección: portada negra (titular de grosor variable) → cinta lima inclinada en
 movimiento → proyectos en claro (oscuro con el sistema) → sobre mí en negro con servicios en grande →
-contacto a todo color lima → pie negro con el nombre en lima a ancho completo. La barra superior es
+precios en claro (planes desde `PRECIOS` + servicios a precio de coste) → preguntas frecuentes en negro
+(`<details>`) → contacto a todo color lima → pie negro con el nombre en lima a ancho completo. La barra superior es
 fija y toma el color de la sección que tiene debajo (`data-tema` = oscuro | claro | acento).
 
 Flujo del script: `DATOS` rellena nombre, email, WhatsApp y redes → `PROYECTOS` genera la lista, los
-filtros (con su número) y los botones "¿Qué necesitas?" de contacto → al elegir uno se reescriben el
-asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
+filtros por sector (con su número) → `PRECIOS` genera los planes, el gancho de la portada y los botones
+"¿Qué necesitas?" de contacto → al elegir un plan (o "Pedir presupuesto" en uno) se reescriben el asunto y el
+cuerpo del `mailto:` y el texto de WhatsApp (también el del botón flotante, que se esconde en contacto).
 
 ## Proyectos mostrados
 
@@ -49,15 +51,19 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 ## Cómo editar
 
-- Proyecto nuevo: copiar un bloque `{ nombre, sector, tipo, anio, descripcion, url, imagen, color }` en `PROYECTOS`.
+- Proyecto nuevo: copiar un bloque `{ nombre, sector, tipo, anio, porque, descripcion, url, imagen, color }` en `PROYECTOS`.
+  `porque`: una frase sobre el negocio y lo que resuelve la web; sale en negrita encima de la descripción.
   `repo` (opcional): enlace al código; añade "Ver código" fuera de la fila (un enlace no puede ir dentro de otro).
   `imagen: ""` muestra una lámina con el color y el nombre (el texto se pone blanco o negro solo).
-  `sector` crea la sección y su filtro (escrito igual en todos); una sección nueva, p. ej. "Restaurantes", aparece sola al usarla. `tipo` sale junto al año y en los botones de contacto.
+  `sector` crea la sección y su filtro (escrito igual en todos); una sección nueva, p. ej. "Restaurantes", aparece sola al usarla. `tipo` sale junto al año.
 - Datos de contacto: objeto `DATOS`. Para SEO, cambiar también `<title>` y metas del `<head>`.
 - Colores: `--acento` (lima), `--negro`, `--blanco` y el bloque claro en `:root`. El acento debe ser claro (lleva texto negro encima).
+- Precios: objeto `PRECIOS` (gancho de la portada + planes con precio, detalle, lista de lo que incluye y ejemplos). Los textos de "servicios a precio de coste" y las preguntas frecuentes están en el HTML.
 - Palabras de la cinta: en el HTML, dos copias idénticas dentro de `.cinta__pista`.
 
 ## Decisiones
+
+- 2026-10-15: enfoque de venta inspirado en julioburga.com/paginas-web (sin copiar textos): frase del porqué en cada proyecto, precios claros (diseño 100–200 €, con backend y base de datos 300 €), servicios a precio de coste sin comisión (el cliente los contrata a su nombre), preguntas frecuentes y botón flotante de WhatsApp. Diseño, colores y animaciones sin cambios (decisión del usuario). Las demos se presentan como demos, no como clientes.
 
 - 2026-10-15: nueva sección Gimnasios con Magnesio (demo-gym en Cloudflare Pages). Primer proyecto con campo `repo`; las demás entradas no lo tienen y se ven igual. Captura hecha con Edge `--force-prefers-reduced-motion --blink-settings=preferredColorScheme=1` para que salga en claro y sin animaciones a medias.
 
