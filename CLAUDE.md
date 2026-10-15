@@ -33,6 +33,7 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 | Barberías | Casa Ferro | Landing | https://aleexx26.github.io/demo-barberia/ | `peluqueria/` |
 | Estancos | Demo Estanco | Web de negocio | https://demo-estanco-2.e275.workers.dev | `Estanco-demo/` |
 | Tatuajes | Tinta Negra | Landing | https://demo-tatuajes.e275.workers.dev | `Tatuajes/` |
+| Tatuajes | Calco | Landing | https://demo-tatuaje-2.e275.workers.dev | `Tatuajes-2/` |
 | Apps | Mis Finanzas | Aplicación web | https://finanzas-23de8.web.app/ | `Economia/` (sin captura: lámina rosa) |
 
 ## Comandos
