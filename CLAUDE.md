@@ -13,7 +13,7 @@ Web de portafolio de una sola página para enseñar mis webs a clientes potencia
 
 ```
 index.html   Todo: <style> (tokens en :root), secciones, <script> con DATOS y PROYECTOS arriba
-img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, tinta-negra, estanco-275)
+img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, tinta-negra, estanco-demo)
 ```
 
 Bloques de color por sección: portada negra (titular de grosor variable) → cinta lima inclinada en
@@ -32,7 +32,7 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 | Atelier Barber | Aplicación web | https://reservas-demo.onrender.com | `Crear Paginas/` |
 | Casa Ferro | Landing | https://aleexx26.github.io/demo-barberia/ | `peluqueria/` |
 | Tinta Negra | Landing | https://demo-tatuajes.e275.workers.dev | `Tatuajes/` |
-| Estanco 275 | Web de negocio | https://estanco275.e275.workers.dev | `Estanco/` |
+| Demo Estanco | Web de negocio | https://demo-estanco-2.e275.workers.dev | `Estanco-demo/` |
 | Mis Finanzas | Aplicación web | https://finanzas-23de8.web.app/ | `Economia/` (sin captura: lámina rosa) |
 
 ## Comandos
@@ -55,6 +55,8 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 - Palabras de la cinta: en el HTML, dos copias idénticas dentro de `.cinta__pista`.
 
 ## Decisiones
+
+- 2026-10-15: Estanco 275 retirado del portafolio porque es de un cliente; en su lugar va la demo con datos de ejemplo (demo-estanco-2). No enseñar webs de clientes sin su permiso.
 
 - 2026-10-15: contacto solo con email, WhatsApp (enlace, sin el número escrito) y LinkedIn (linkedin.com/in/asobrinomurillo); Instagram quitado a petición del usuario.
 
