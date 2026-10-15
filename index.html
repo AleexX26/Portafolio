@@ -391,7 +391,6 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .contacto__redes a:hover { transform: translateX(8px); }
 .contacto__redes a:hover .flecha { transform: rotate(45deg); }
 .contacto__redes .flecha { width: .75em; height: .75em; }
-.contacto__nota { margin-top: 16px; font-size: var(--t-nota); font-weight: 550; }
 @media (max-width: 960px) {
   .contacto__principal, .contacto__redes { grid-column: 1 / -1; }
 }
@@ -564,13 +563,9 @@ button { font: inherit; color: inherit; cursor: pointer; }
           <a id="whatsapp" href="https://wa.me/34676641686" target="_blank" rel="noopener">WhatsApp
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
           </a>
-          <a id="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn
+          <a id="linkedin" href="https://www.linkedin.com/in/asobrinomurillo" target="_blank" rel="noopener">LinkedIn
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
           </a>
-          <a id="instagram" href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram
-            <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
-          </a>
-          <p class="contacto__nota">WhatsApp: <span id="whatsapp-texto">676 641 686</span></p>
         </div>
       </div>
     </div>
@@ -607,8 +602,7 @@ const DATOS = {
   email: "alsomu26@gmail.com",
   asunto: "Nuevo proyecto web",               // asunto por defecto del email
   whatsapp: "34676641686",                    // con prefijo de país (34 = España), sin espacios ni +
-  linkedin: "https://www.linkedin.com/",      // CAMBIA por tu perfil: https://www.linkedin.com/in/tu-usuario
-  instagram: "https://www.instagram.com/",    // CAMBIA por tu perfil: https://www.instagram.com/tu-usuario
+  linkedin: "https://www.linkedin.com/in/asobrinomurillo",
 };
 
 /* =====================================================================
@@ -725,8 +719,6 @@ const PROYECTOS = [
   $$("[data-nombre-corto]").forEach((el) => (el.textContent = DATOS.nombreCorto));
   $$("[data-email]").forEach((el) => (el.textContent = DATOS.email));
   $("#linkedin").href = DATOS.linkedin;
-  $("#instagram").href = DATOS.instagram;
-  $("#whatsapp-texto").textContent = DATOS.whatsapp.replace(/^34/, "").replace(/(\d{3})(\d{3})(\d{3})/, "$1 $2 $3");
   $("#anio").textContent = new Date().getFullYear();
   const mes = new Intl.DateTimeFormat("es-ES", { month: "long" }).format(new Date());
   $("#mes-disponible").textContent = ` en ${mes}`;

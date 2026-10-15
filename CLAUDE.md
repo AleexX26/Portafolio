@@ -56,6 +56,8 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 ## Decisiones
 
+- 2026-10-15: contacto solo con email, WhatsApp (enlace, sin el número escrito) y LinkedIn (linkedin.com/in/asobrinomurillo); Instagram quitado a petición del usuario.
+
 - 2026-10-15: solo Cloudflare (decisión del usuario): se borra `.github/workflows/pages.yml`. GitHub Pages hay que desactivarlo a mano en Settings > Pages del repo.
 
 - 2026-10-15: despliegue también en Cloudflare Workers (cuenta minisobri26, worker `portafolio`), como Estanco 275: `wrangler.jsonc` sin `main` (solo archivos estáticos) y `workers_dev: true` para activar la URL .workers.dev al desplegar.
@@ -82,7 +84,6 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 ## Pendiente antes de publicar
 
-- Poner las URLs reales de LinkedIn e Instagram en `DATOS` (ahora apuntan a la portada de cada red).
 - Captura de Mis Finanzas con datos de ejemplo (iniciar sesión y guardarla en `img/mis-finanzas.webp`).
 - Confirmar los textos de "Sobre mí" y la frase "te respondo con una propuesta clara, sin compromiso".
 - Atelier Barber está en Render gratis: la primera visita tras un rato parado tarda en cargar (más de un minuto).
