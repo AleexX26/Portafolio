@@ -38,8 +38,10 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 - Ver en local: doble clic en `index.html` (funciona desde el disco).
 - Repo: https://github.com/AleexX26/Portafolio (público, rama `main`).
-- Publicar: `git push` a `main` → `.github/workflows/pages.yml` copia `index.html` + `img/` y despliega en
-  https://aleexx26.github.io/Portafolio/ (≈1 min).
+- Publicar: `git push` a `main` despliega en dos sitios a la vez (≈1 min):
+  - Cloudflare Workers (Workers Builds conectado al repo, `wrangler.jsonc` solo con assets):
+    https://portafolio.e275.workers.dev. `.assetsignore` deja fuera CLAUDE.md, wrangler.jsonc y .github.
+  - GitHub Pages (`.github/workflows/pages.yml` copia `index.html` + `img/`): https://aleexx26.github.io/Portafolio/
 - Rehacer una captura (Edge sin ventana; el comando no termina solo, por eso el `timeout`):
   `timeout 45 "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --hide-scrollbars --user-data-dir="C:/Users/minis/AppData/Local/Temp/edge-shot" --window-size=1440,1080 --virtual-time-budget=30000 --run-all-compositor-stages-before-draw --screenshot="C:/…/img/x.png" URL`
   y pasarla a WebP 1200×900 con `sharp` (está instalado en `Crear_pagina2/node_modules`).
@@ -54,6 +56,8 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 - Palabras de la cinta: en el HTML, dos copias idénticas dentro de `.cinta__pista`.
 
 ## Decisiones
+
+- 2026-10-15: despliegue también en Cloudflare Workers (cuenta minisobri26, worker `portafolio`), como Estanco 275: `wrangler.jsonc` sin `main` (solo archivos estáticos) y `workers_dev: true` para activar la URL .workers.dev al desplegar.
 
 - 2026-10-15: sube al repo existente `AleexX26/Portafolio` sustituyendo el portafolio antiguo (React + Python de Emergent) con un commit encima de su historial, sin forzar: lo antiguo sigue en `95786a0`. Pages se publica con Actions porque el repo ya tenía ese origen configurado.
 
