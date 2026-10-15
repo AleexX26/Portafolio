@@ -13,7 +13,7 @@ Web de portafolio de una sola página para enseñar mis webs a clientes potencia
 
 ```
 index.html   Todo: <style> (tokens en :root), secciones, <script> con DATOS y PROYECTOS arriba
-img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, estanco-275)
+img/         Capturas 4:3 de los proyectos (atelier-barber, casa-ferro, tinta-negra, estanco-275)
 ```
 
 Bloques de color por sección: portada negra (titular de grosor variable) → cinta lima inclinada en
@@ -31,6 +31,7 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 | --- | --- | --- | --- |
 | Atelier Barber | Aplicación web | https://reservas-demo.onrender.com | `Crear Paginas/` |
 | Casa Ferro | Landing | https://aleexx26.github.io/demo-barberia/ | `peluqueria/` |
+| Tinta Negra | Landing | https://demo-tatuajes.e275.workers.dev | `Tatuajes/` |
 | Estanco 275 | Web de negocio | https://estanco275.e275.workers.dev | `Estanco/` |
 | Mis Finanzas | Aplicación web | https://finanzas-23de8.web.app/ | `Economia/` (sin captura: lámina rosa) |
 
