@@ -27,13 +27,13 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 ## Proyectos mostrados
 
-| Proyecto | Tipo | URL | Carpeta local |
-| --- | --- | --- | --- |
-| Atelier Barber | Aplicación web | https://reservas-demo.onrender.com | `Crear Paginas/` |
-| Casa Ferro | Landing | https://aleexx26.github.io/demo-barberia/ | `peluqueria/` |
-| Tinta Negra | Landing | https://demo-tatuajes.e275.workers.dev | `Tatuajes/` |
-| Demo Estanco | Web de negocio | https://demo-estanco-2.e275.workers.dev | `Estanco-demo/` |
-| Mis Finanzas | Aplicación web | https://finanzas-23de8.web.app/ | `Economia/` (sin captura: lámina rosa) |
+| Sector | Proyecto | Tipo | URL | Carpeta local |
+| --- | --- | --- | --- | --- |
+| Barberías | Atelier Barber | Aplicación web | https://reservas-demo.onrender.com | `Crear Paginas/` |
+| Barberías | Casa Ferro | Landing | https://aleexx26.github.io/demo-barberia/ | `peluqueria/` |
+| Estancos | Demo Estanco | Web de negocio | https://demo-estanco-2.e275.workers.dev | `Estanco-demo/` |
+| Tatuajes | Tinta Negra | Landing | https://demo-tatuajes.e275.workers.dev | `Tatuajes/` |
+| Apps | Mis Finanzas | Aplicación web | https://finanzas-23de8.web.app/ | `Economia/` (sin captura: lámina rosa) |
 
 ## Comandos
 
@@ -47,14 +47,16 @@ asunto y el cuerpo del `mailto:` y el texto de WhatsApp.
 
 ## Cómo editar
 
-- Proyecto nuevo: copiar un bloque `{ nombre, tipo, anio, descripcion, url, imagen, color }` en `PROYECTOS`.
+- Proyecto nuevo: copiar un bloque `{ nombre, sector, tipo, anio, descripcion, url, imagen, color }` en `PROYECTOS`.
   `imagen: ""` muestra una lámina con el color y el nombre (el texto se pone blanco o negro solo).
-  El mismo `tipo` escrito igual agrupa en el mismo filtro.
+  `sector` crea la sección y su filtro (escrito igual en todos); una sección nueva, p. ej. "Restaurantes", aparece sola al usarla. `tipo` sale junto al año y en los botones de contacto.
 - Datos de contacto: objeto `DATOS`. Para SEO, cambiar también `<title>` y metas del `<head>`.
 - Colores: `--acento` (lima), `--negro`, `--blanco` y el bloque claro en `:root`. El acento debe ser claro (lleva texto negro encima).
 - Palabras de la cinta: en el HTML, dos copias idénticas dentro de `.cinta__pista`.
 
 ## Decisiones
+
+- 2026-10-15: proyectos agrupados por sector (Barberías, Estancos, Tatuajes, Apps) con un título en etiqueta lima por sección, y filtros por sector en vez de por tipo. Restaurantes se añadirá cuando haya proyecto (no se muestran secciones vacías).
 
 - 2026-10-15: Estanco 275 retirado del portafolio porque es de un cliente; en su lugar va la demo con datos de ejemplo (demo-estanco-2). No enseñar webs de clientes sin su permiso.
 

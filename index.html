@@ -83,7 +83,7 @@ body {
   -webkit-font-smoothing: antialiased;
   caret-color: var(--acento);
 }
-h1, h2, h3, p, ul, ol, figure { margin: 0; }
+h1, h2, h3, h4, p, ul, ol, figure { margin: 0; }
 ul, ol { padding: 0; list-style: none; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
@@ -225,6 +225,16 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .filtro[aria-pressed="true"] sup { opacity: 1; }
 
 .lista { margin-inline: calc(var(--margen) * -1); }
+/* Título de cada sección (Barberías, Estancos...): etiqueta en el color de acento */
+.grupo { padding: clamp(48px, 6vw, 96px) var(--margen) clamp(10px, 1.2vw, 18px); }
+.grupo.primero { padding-top: 0; }
+.grupo__titulo {
+  display: inline-flex; align-items: baseline; gap: .35em;
+  padding: .12em .4em .16em;
+  background: var(--acento); color: var(--negro);
+  font-size: var(--t-frase); font-weight: 650; line-height: 1.1; letter-spacing: -.025em;
+}
+.grupo__titulo sup { font-size: .55em; font-weight: 600; top: 0; opacity: .65; }
 .proyecto {
   position: relative;
   display: grid;
@@ -297,6 +307,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @media (hover: none), (max-width: 767px) {
   .previa { display: none; }
   .lista { margin-inline: 0; display: grid; gap: clamp(48px, 10vw, 72px); }
+  .grupo { padding: 16px 0 0; margin-bottom: calc(clamp(48px, 10vw, 72px) * -1 + 20px); }
+  .grupo.primero { padding-top: 0; }
   .proyecto { grid-template-columns: 1fr; row-gap: 14px; padding: 0; }
   .proyecto:hover, .proyecto:focus-visible { background: transparent; color: inherit; }
   .proyecto:hover .proyecto__nombre { transform: none; font-weight: 600; }
@@ -495,7 +507,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   <section class="proyectos contenedor" id="proyectos" data-tema="claro" aria-labelledby="titulo-proyectos">
     <div class="proyectos__cabecera">
       <h2 class="titulo-seccion" id="titulo-proyectos" data-aparece>Proyectos<sup id="total-proyectos"></sup></h2>
-      <div class="filtros" id="filtros" role="group" aria-label="Filtrar proyectos por tipo" data-aparece style="--d:1"></div>
+      <div class="filtros" id="filtros" role="group" aria-label="Filtrar proyectos por sector" data-aparece style="--d:1"></div>
     </div>
     <p class="solo-lectores" id="aviso-filtro" aria-live="polite"></p>
     <ul class="lista" id="lista"></ul>
@@ -609,8 +621,12 @@ const DATOS = {
    TUS PROYECTOS — AÑADE AQUÍ
    ---------------------------------------------------------------------
    Para añadir uno, copia un bloque { ... }, pégalo debajo y rellénalo.
-   - tipo:   los filtros se crean solos con los tipos que escribas.
-             Escribe el mismo tipo igual en todos (mayúsculas incluidas).
+   - sector: la sección donde aparece (Barberías, Estancos, Tatuajes...).
+             Las secciones y sus filtros se crean solas: para abrir una nueva,
+             p. ej. "Restaurantes", basta con escribirla en un proyecto.
+             Escribe el mismo sector igual en todos (mayúsculas y tildes incluidas).
+   - tipo:   qué clase de web es (Landing, Aplicación web...). Sale junto al año
+             y en los botones "¿Qué necesitas?" de contacto.
    - imagen: ruta a una captura dentro de la carpeta img/, p. ej. "img/mi-web.webp"
              (formato 4:3, por ejemplo 1200×900; se ve la parte de arriba).
              Déjala vacía "" y se mostrará una lámina con el color y el nombre.
@@ -620,6 +636,7 @@ const DATOS = {
 const PROYECTOS = [
   {
     nombre: "Atelier Barber",
+    sector: "Barberías",
     tipo: "Aplicación web",
     anio: 2026,
     descripcion: "Reservas online para barberías: cita en cuatro pasos, cuenta de cliente, reseñas y panel de administración. Demo con datos de ejemplo.",
@@ -629,6 +646,7 @@ const PROYECTOS = [
   },
   {
     nombre: "Casa Ferro",
+    sector: "Barberías",
     tipo: "Landing",
     anio: 2026,
     descripcion: "Web de una página para barberías: carta de precios, galería, equipo, preguntas frecuentes y reserva por WhatsApp. Negocio de demostración.",
@@ -637,16 +655,8 @@ const PROYECTOS = [
     color: "#C9A063",
   },
   {
-    nombre: "Tinta Negra",
-    tipo: "Landing",
-    anio: 2026,
-    descripcion: "Web para estudios de tatuaje: tarifas, galería, tatuadores, opiniones y reserva de consulta o sesión por WhatsApp. Negocio de demostración.",
-    url: "https://demo-tatuajes.e275.workers.dev",
-    imagen: "img/tinta-negra.webp",
-    color: "#E8604C",
-  },
-  {
     nombre: "Demo Estanco",
+    sector: "Estancos",
     tipo: "Web de negocio",
     anio: 2026,
     descripcion: "Web para estancos lista para personalizar: servicios, horarios con el día de hoy resaltado, reseñas, ubicación y contacto. Negocio de demostración.",
@@ -655,7 +665,18 @@ const PROYECTOS = [
     color: "#7E2320",
   },
   {
+    nombre: "Tinta Negra",
+    sector: "Tatuajes",
+    tipo: "Landing",
+    anio: 2026,
+    descripcion: "Web para estudios de tatuaje: tarifas, galería, tatuadores, opiniones y reserva de consulta o sesión por WhatsApp. Negocio de demostración.",
+    url: "https://demo-tatuajes.e275.workers.dev",
+    imagen: "img/tinta-negra.webp",
+    color: "#E8604C",
+  },
+  {
     nombre: "Mis Finanzas",
+    sector: "Apps",
     tipo: "Aplicación web",
     anio: 2026,
     descripcion: "App instalable para controlar ingresos, gastos, hucha y objetivos, con gráficas propias y sincronización en la nube con tu cuenta de Google.",
@@ -765,24 +786,29 @@ const PROYECTOS = [
   }
 
   /* ---------- Lista de proyectos ---------- */
+  // Agrupados por sector, en el orden en que aparece cada sector en la lista PROYECTOS
+  const sectores = [...new Set(PROYECTOS.map((p) => p.sector))];
+  const contar = (s) => PROYECTOS.filter((p) => p.sector === s).length;
   const lista = $("#lista");
-  lista.innerHTML = PROYECTOS.map((p, i) => `
-    <li data-tipo="${escapar(p.tipo)}" data-aparece style="--d:${Math.min(i, 4)}">
+  lista.innerHTML = sectores.map((s) => `
+    <li class="grupo" data-sector="${escapar(s)}" data-aparece>
+      <h3 class="grupo__titulo">${escapar(s)}<sup>${contar(s)}</sup></h3>
+    </li>` + PROYECTOS.map((p, i) => p.sector !== s ? "" : `
+    <li data-sector="${escapar(p.sector)}" data-aparece style="--d:1">
       <a class="proyecto" href="${escapar(p.url)}" target="_blank" rel="noopener" data-indice="${i}">
         <div class="proyecto__previa">${visual(p, i)}</div>
-        <h3 class="proyecto__nombre">${escapar(p.nombre)}</h3>
+        <h4 class="proyecto__nombre">${escapar(p.nombre)}</h4>
         <div>
           <span class="proyecto__meta">${escapar(p.tipo)} · ${escapar(p.anio)}</span>
           <p class="proyecto__desc">${escapar(p.descripcion)}</p>
         </div>
         <span class="proyecto__ir">Visitar web ${FLECHA}<span class="solo-lectores">(se abre en una pestaña nueva)</span></span>
       </a>
-    </li>`).join("");
+    </li>`).join("")).join("");
 
-  /* ---------- Filtros con su número ---------- */
+  /* ---------- Filtros por sector con su número ---------- */
   const filtros = $("#filtros");
-  const contar = (t) => PROYECTOS.filter((p) => p.tipo === t).length;
-  filtros.innerHTML = [["Todos", PROYECTOS.length], ...tipos.map((t) => [t, contar(t)])]
+  filtros.innerHTML = [["Todos", PROYECTOS.length], ...sectores.map((s) => [s, contar(s)])]
     .map(([t, n], i) => `<button class="filtro" type="button" data-filtro="${i ? escapar(t) : "*"}" aria-pressed="${!i}">${escapar(t)}<sup>${n}</sup></button>`).join("");
 
   let filtroActual = "*";
@@ -796,16 +822,24 @@ const PROYECTOS = [
     $("#aviso-filtro").textContent = `Mostrando ${n} ${n === 1 ? "proyecto" : "proyectos"}`;
   });
 
+  // La primera sección visible no lleva hueco encima
+  const marcarPrimero = () => {
+    const primero = $$("li", lista).find((li) => !li.hidden);
+    $$(".grupo", lista).forEach((g) => g.classList.toggle("primero", g === primero));
+  };
+  marcarPrimero();
+
   // Transición: salen los que sobran, los que quedan se recolocan y entran los nuevos
   let turno = 0;
-  function filtrar(tipo) {
+  function filtrar(sector) {
     const items = $$("li", lista);
-    const encaja = (li) => tipo === "*" || li.dataset.tipo === tipo;
+    const encaja = (li) => sector === "*" || li.dataset.sector === sector;
     items.forEach((li) => li.getAnimations().forEach((a) => a.finish()));
     const yo = ++turno;
 
     if (sinMovimiento.matches) {
       items.forEach((li) => { li.hidden = !encaja(li); li.classList.add("dentro"); });
+      marcarPrimero();
       return;
     }
     const salen = items.filter((li) => !li.hidden && !encaja(li));
@@ -820,6 +854,7 @@ const PROYECTOS = [
       const antes = new Map(items.map((li) => [li, li.getBoundingClientRect().top]));
       const entran = items.filter((li) => li.hidden && encaja(li));
       items.forEach((li) => { li.hidden = !encaja(li); li.classList.add("dentro"); li.getAnimations().forEach((a) => a.cancel()); });
+      marcarPrimero();
       items.filter((li) => !li.hidden && !entran.includes(li)).forEach((li) => {
         const dy = antes.get(li) - li.getBoundingClientRect().top;
         if (dy) li.animate([{ transform: `translateY(${dy}px)` }, { transform: "none" }], { duration: 560, easing: EASE });
@@ -865,7 +900,10 @@ const PROYECTOS = [
   lista.addEventListener("pointermove", (e) => {
     if (!conRaton.matches || e.pointerType !== "mouse") return;
     const a = e.target.closest(".proyecto");
-    if (!a) return;
+    if (!a) {   // encima del título de una sección: se esconde
+      pos.objetivoAlfa = 0; previa.classList.remove("visible"); arrancar();
+      return;
+    }
     objetivo(e);
     const i = +a.dataset.indice;
     itemsPrevia.forEach((el, j) => el.classList.toggle("activo", j === i));
