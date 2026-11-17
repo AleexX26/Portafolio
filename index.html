@@ -373,9 +373,8 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
 .planes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-inline: calc(var(--margen) * -1); }
 .plan { display: flex; flex-direction: column; gap: 18px; padding: clamp(28px, 4vw, 64px) var(--margen); background: var(--superficie); }
 .plan + .plan { background: var(--negro); color: var(--blanco); }
-.plan__nombre { font-size: var(--t-frase); font-weight: 650; letter-spacing: -.025em; line-height: 1.15; }
-.plan__precio { font-size: clamp(3rem, 8vw, 8rem); font-weight: 700; letter-spacing: -.05em; line-height: .9; font-variant-numeric: tabular-nums; }
-.plan + .plan .plan__precio { color: var(--acento); }
+.plan__nombre { font-size: clamp(1.75rem, 3.4vw, 3.25rem); font-weight: 650; letter-spacing: -.025em; line-height: 1.15; }
+.plan + .plan .plan__nombre { color: var(--acento); }
 .plan__detalle { font-weight: 600; }
 .plan__incluye li { position: relative; padding-left: 1.4em; margin-block: .4em; }
 .plan__incluye li::before { content: ""; position: absolute; left: 0; top: .5em; width: .55em; height: .55em; background: currentColor; }
@@ -547,7 +546,7 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
     <nav class="nav__enlaces" aria-label="Principal">
       <a class="enlace" href="#proyectos">Proyectos</a>
       <a class="enlace" href="#sobre-mi">Sobre mí</a>
-      <a class="enlace" href="#precios">Precios</a>
+      <a class="enlace" href="#precios">Planes</a>
     </nav>
     <a class="boton" href="#contacto">Hablemos</a>
   </div>
@@ -571,7 +570,7 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
         <p class="disponible"><span class="disponible__punto" aria-hidden="true"></span>
           <span>Disponible para nuevos proyectos<span id="mes-disponible"></span></span></p>
         <!-- El texto sale de PRECIOS.gancho en el script -->
-        <a class="portada__precio enlace" href="#precios" id="gancho-precio">Webs desde 100 €, y los servicios a precio de coste</a>
+        <a class="portada__precio enlace" href="#precios" id="gancho-precio">Presupuesto por escrito y servicios a precio de coste</a>
         <div class="portada__botones">
           <a class="boton iman" href="#contacto">Cuéntame tu idea
             <svg class="flecha" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2.2"/></svg>
@@ -585,8 +584,8 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
   <!-- Cinta en movimiento: cambia aquí las palabras (las dos copias deben ser iguales) -->
   <div class="cinta-caja" aria-hidden="true"><div class="cinta">
     <div class="cinta__pista">
-      <div class="cinta__grupo"><span>Webs desde 100 €</span><i></i><span>Servicios a precio de coste</span><i></i><span>Webs corporativas</span><i></i><span>Landing pages</span><i></i><span>Reservas online</span><i></i><span>Disponible para nuevos proyectos</span><i></i></div>
-      <div class="cinta__grupo"><span>Webs desde 100 €</span><i></i><span>Servicios a precio de coste</span><i></i><span>Webs corporativas</span><i></i><span>Landing pages</span><i></i><span>Reservas online</span><i></i><span>Disponible para nuevos proyectos</span><i></i></div>
+      <div class="cinta__grupo"><span>Presupuesto sin compromiso</span><i></i><span>Servicios a precio de coste</span><i></i><span>Webs corporativas</span><i></i><span>Landing pages</span><i></i><span>Reservas online</span><i></i><span>Disponible para nuevos proyectos</span><i></i></div>
+      <div class="cinta__grupo"><span>Presupuesto sin compromiso</span><i></i><span>Servicios a precio de coste</span><i></i><span>Webs corporativas</span><i></i><span>Landing pages</span><i></i><span>Reservas online</span><i></i><span>Disponible para nuevos proyectos</span><i></i></div>
     </div>
   </div></div>
 
@@ -637,7 +636,7 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
   <!-- Los planes se generan desde PRECIOS en el script; los textos de esta sección se cambian aquí -->
   <section class="precios contenedor" id="precios" data-tema="claro" aria-labelledby="titulo-precios">
     <div class="precios__cabecera">
-      <h2 class="titulo-seccion" id="titulo-precios" data-aparece>Precios</h2>
+      <h2 class="titulo-seccion" id="titulo-precios" data-aparece>Planes</h2>
       <p class="precios__intro" data-aparece style="--d:1">Yo cobro el diseño y la programación. Todo lo demás lo pagas a precio de coste, sin que yo le sume nada.</p>
     </div>
 
@@ -647,7 +646,7 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
       <h3 class="coste__titulo" data-aparece>Los servicios, a precio de coste</h3>
       <p class="coste__texto" data-aparece style="--d:1">Antes de empezar te paso el presupuesto completo: mi trabajo por un lado y, por otro, cada servicio que necesite tu web, cuánto cuesta y dónde se contrata. Lo contratas a tu nombre y lo pagas directamente.</p>
       <ul class="coste__lista">
-        <li data-aparece style="--d:2"><strong>Dominio</strong><span>La dirección de tu web, por ejemplo tunegocio.es. Suele costar entre 10 y 15 € al año.</span></li>
+        <li data-aparece style="--d:2"><strong>Dominio</strong><span>La dirección de tu web, por ejemplo tunegocio.es, contratada a tu nombre.</span></li>
         <li data-aparece style="--d:3"><strong>Alojamiento</strong><span>Muchas webs como estas caben en planes gratuitos. Si la tuya necesita servidor, te digo cuál y cuánto cuesta.</span></li>
         <li data-aparece style="--d:4"><strong>Otros servicios</strong><span>Correo, base de datos o pagos online, solo si tu web los necesita y a su precio.</span></li>
       </ul>
@@ -662,11 +661,7 @@ li:has(> .proyecto:hover) .proyecto__repo { color: var(--negro); }
       <div class="faq__lista">
         <details class="pregunta" data-aparece>
           <summary>¿Cuánto me va a costar en total?</summary>
-          <p>Mi trabajo, según los precios de arriba, más los servicios que necesite tu web a precio de coste. Antes de empezar tienes el presupuesto completo por escrito, con cada servicio, su precio y dónde se contrata.</p>
-        </details>
-        <details class="pregunta" data-aparece style="--d:1">
-          <summary>¿Por qué es tan barato? ¿Dónde está la trampa?</summary>
-          <p>No hay trampa: cobro solo mi trabajo. El dominio, el alojamiento y el resto de servicios los pagas tú directamente al proveedor, sin comisión por medio.</p>
+          <p>Mi trabajo más los servicios que necesite tu web a precio de coste. Antes de empezar tienes el presupuesto completo por escrito, con cada servicio, su precio y dónde se contrata.</p>
         </details>
         <details class="pregunta" data-aparece style="--d:2">
           <summary>¿A nombre de quién quedan el dominio y la web?</summary>
@@ -775,16 +770,15 @@ const DATOS = {
 /* =====================================================================
    TUS PRECIOS — CAMBIA AQUÍ
    ---------------------------------------------------------------------
-   - gancho: la frase de precio que sale en la portada.
+   - gancho: la frase que sale en la portada, bajo "Disponible".
    - planes: cada bloque es un plan. Sus nombres también salen en los
      botones "¿Qué necesitas?" de contacto. Para añadir uno, copia un bloque.
    ===================================================================== */
 const PRECIOS = {
-  gancho: "Webs desde 100 €, y los servicios a precio de coste",
+  gancho: "Presupuesto por escrito y servicios a precio de coste",
   planes: [
     {
       nombre: "Web con diseño",
-      precio: "100–200 €",
       detalle: "Según el tamaño: una sola página o varias secciones.",
       incluye: [
         "Diseño a medida, pensado primero para el móvil",
@@ -796,7 +790,6 @@ const PRECIOS = {
     },
     {
       nombre: "Web con backend y base de datos",
-      precio: "300 €",
       detalle: "Cuando la web tiene que guardar datos y trabajar sola.",
       incluye: [
         "Todo lo de la web con diseño",
@@ -988,7 +981,6 @@ const PROYECTOS = [
   $("#planes").innerHTML = PRECIOS.planes.map((p, i) => `
     <article class="plan" data-aparece style="--d:${i + 1}">
       <h3 class="plan__nombre">${escapar(p.nombre)}</h3>
-      <p class="plan__precio">${escapar(p.precio)}</p>
       <p class="plan__detalle">${escapar(p.detalle)}</p>
       <ul class="plan__incluye">${p.incluye.map((x) => `<li>${escapar(x)}</li>`).join("")}</ul>
       <p class="plan__ejemplos">${escapar(p.ejemplos)}</p>
